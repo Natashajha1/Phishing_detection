@@ -48,5 +48,19 @@ A capstone project designed to tackle phishing threats through a secure, interpr
 
 ### 1. Clone the repository
 ```bash
-git clone https://github.com/yourusername/securl.git
-cd securl
+git clone https://github.com/Natashajha1/Phishing_detection.git
+
+python3 -m venv venv
+source venv/bin/activate
+
+# Google Custom Search
+export GOOGLE_API_KEY='your_api_key_here'
+export SEARCH_ENGINE_ID="your_search_engine_id"
+
+# Google Vision API
+export GOOGLE_APPLICATION_CREDENTIALS='path_to_your_gcp_credentials.json'
+
+(Optional but recommended) Set up Linux Mint Virtual Machine
+Use VirtualBox/VMware to isolate the browser rendering process. This increases security against drive-by-downloads and cloaked phishing pages.
+
+
