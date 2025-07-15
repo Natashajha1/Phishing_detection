@@ -56,11 +56,12 @@ source venv/bin/activate
 ### 3. Configure Environment Variables
 Set the following environment variables in your terminal or .env file:
 
-Google Custom Search
+```bash
+# Google Custom Search
 export GOOGLE_API_KEY='your_api_key_here'
 export SEARCH_ENGINE_ID="your_search_engine_id"
 
-Google Vision API
+# Google Vision API
 export GOOGLE_APPLICATION_CREDENTIALS='path_to_your_gcp_credentials.json'
 
 ### 5. (Optional but Recommended) Set up Linux Mint Virtual Machine
