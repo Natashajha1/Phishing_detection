@@ -50,8 +50,10 @@ A capstone project designed to tackle phishing threats through a secure, interpr
 git clone https://github.com/Natashajha1/Phishing_detection.git
 
 ### 2. Set Up Virtual Environment
+```bash
 python3 -m venv venv
 source venv/bin/activate
+```
 
 ### 3. Configure Environment Variables
 Set the following environment variables in your terminal or .env file:
@@ -63,6 +65,8 @@ export SEARCH_ENGINE_ID="your_search_engine_id"
 
 # Google Vision API
 export GOOGLE_APPLICATION_CREDENTIALS='path_to_your_gcp_credentials.json'
+
+```
 
 ### 5. (Optional but Recommended) Set up Linux Mint Virtual Machine
 Use VirtualBox or VMware to create a Linux Mint sandbox environment for headless browser rendering. This improves protection against cloaked phishing attempts and malicious scripts.
