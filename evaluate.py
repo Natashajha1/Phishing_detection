@@ -1,17 +1,14 @@
 import pandas as pd
 import requests
 import time
-from tqdm import tqdm  # Importing tqdm for the progress bar
+from tqdm import tqdm 
 
-# Load the dataset (placeholder file name)
+# Load the dataset with phishing and legitimate sites
 df = pd.read_csv("phishing_dataset.csv")
 
-# Normalize label: 0 = phishing=false, 1 = phishing=true
 df["expected_label"] = df["Label"].map({0: "phishing=false", 1: "phishing=true"})
-
 results = []
 
-# Initialize tqdm progress bar with total length of dataset
 for idx, row in tqdm(df.iterrows(), total=df.shape[0], desc="Processing URLs", unit="url"):
     url = row["URL"]
     expected = row["expected_label"]
@@ -22,7 +19,7 @@ for idx, row in tqdm(df.iterrows(), total=df.shape[0], desc="Processing URLs", u
         result = response.json()
         
         is_phishing = result.get("is_phishing", "error")
-        reason = result.get("reason", "No reason provided")  # Get the reason from the response, default to "No reason provided"
+        reason = result.get("reason", "No reason provided")  
         duration = round(end - start, 2)
 
         correct = None
@@ -33,7 +30,6 @@ for idx, row in tqdm(df.iterrows(), total=df.shape[0], desc="Processing URLs", u
         elif is_phishing in [True, False]:
             correct = False
 
-        # Add the result with a reason for phishing
         results.append({
             "url": url,
             "expected_label": expected,
@@ -54,7 +50,6 @@ for idx, row in tqdm(df.iterrows(), total=df.shape[0], desc="Processing URLs", u
             "reason": "Error in detection"
         })
 
-# Save results
 results_df = pd.DataFrame(results)
 results_df.to_csv("resultsp4_2.csv", index=False)
 
