@@ -46,10 +46,6 @@ A capstone project designed to tackle phishing threats through a secure, interpr
 
 > Ensure you're running on a system with Python 3.8+ and a virtualization environment (e.g., VirtualBox or VMware).
 
-## 🚀 Getting Started
-
-Ensure you're running on a system with **Python 3.8+** and a **virtualization environment** (e.g., VirtualBox or VMware).
-
 ### 1. Clone the Repository
 git clone https://github.com/Natashajha1/Phishing_detection.git
 
@@ -60,11 +56,11 @@ source venv/bin/activate
 ### 3. Configure Environment Variables
 Set the following environment variables in your terminal or .env file:
 
-# Google Custom Search
+Google Custom Search
 export GOOGLE_API_KEY='your_api_key_here'
 export SEARCH_ENGINE_ID="your_search_engine_id"
 
-# Google Vision API
+Google Vision API
 export GOOGLE_APPLICATION_CREDENTIALS='path_to_your_gcp_credentials.json'
 
 ### 5. (Optional but Recommended) Set up Linux Mint Virtual Machine
